@@ -3,7 +3,8 @@ import gdb
 import os
 
 def get_thread_names():
-    thread_regex = re.compile("(\d+)\s+Thread\s+0x[0-9a-f]+\s+\(LWP (\d+)\)")
+    # thread_regex = re.compile("(\d+)\s+Thread\s+0x[0-9a-f]+\s+\(LWP (\d+)\)")
+    thread_regex = re.compile("(\d+)\s+Thread\s\d+\.(\d+)\s0x[0-9a-f].*")
     # Capture the result of 'info threads' to a string
     thread_info = gdb.execute("info threads", False, True)
 
